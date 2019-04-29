@@ -29,3 +29,20 @@ alert( counter2() ); // ?
 */!*
 ```
 
+## Solution ##
+## Note :- You can not access any variable or function which are created in their block (local scop) only the thing is they are not created in window object. ##
+
+  if(true){
+    //console.log(a);
+    //console.log(sum(5));
+    let a = 10;
+    function sum(a){
+        return function(b){ return a+b;}
+    }
+
+    var add = function(a){
+        return function(b){ return a+b;}
+    }
+}
+
+console.log(add(5)(10));
